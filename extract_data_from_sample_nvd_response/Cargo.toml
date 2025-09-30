@@ -1,0 +1,12 @@
+[package]
+name = "extract_data_from_sample_nvd_response"
+version = "0.1.0"
+edition = "2024"
+authors = ["hungdv98 packetloss0709@gmail.com"]
+
+[dependencies]
+anyhow = "1.0.100"
+rayon = "1.11.0"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.145"
+tokio = { version = "1.47.1", features = ["full"] }

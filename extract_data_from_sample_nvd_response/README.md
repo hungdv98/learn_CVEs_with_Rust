@@ -1,0 +1,1 @@
+# Xử lý dữ liệu CVE cơ bản từ NVD: đọc từ file JSON
