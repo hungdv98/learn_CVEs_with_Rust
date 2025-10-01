@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "\n        CREATE TABLE IF NOT EXISTS cves (\n            id TEXT PRIMARY KEY NOT NULL,\n            source_identifier TEXT,\n            published TEXT,\n            last_modified TEXT,\n            vuln_status TEXT,\n            description_en TEXT,\n            cvssv2_base_score REAL,\n            cvssv2_vector TEXT,\n            cvssv3_base_score REAL,\n            cvssv3_vector TEXT,\n            cpes TEXT,\n            \"references\" TEXT, \n            weaknesses TEXT \n        );\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": []
+  },
+  "hash": "5509a6bd2dddcd6c813c7c98d196a2a7ceeba6bcc70ebf6c35efe6d1427c20d4"
+}

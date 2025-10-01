@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "\n            INSERT INTO cves (\n                id,\n                source_identifier,\n                published,\n                last_modified,\n                vuln_status,\n                description_en,\n                cvssv2_base_score,\n                cvssv2_vector,\n                cvssv3_base_score,\n                cvssv3_vector,\n                cpes,\n                \"references\",\n                weaknesses \n            )\n            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)\n            ON CONFLICT (id) DO UPDATE SET\n                source_identifier = excluded.source_identifier,\n                published = excluded.published,\n                last_modified = excluded.last_modified,\n                vuln_status = excluded.vuln_status,\n                description_en = excluded.description_en,\n                cvssv2_base_score = excluded.cvssv2_base_score,\n                cvssv2_vector = excluded.cvssv2_vector,\n                cvssv3_base_score = excluded.cvssv3_base_score,\n                cvssv3_vector = excluded.cvssv3_vector,\n                cpes = excluded.cpes,\n                \"references\" = excluded.\"references\",\n                weaknesses = excluded.weaknesses\n            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 13
+    },
+    "nullable": []
+  },
+  "hash": "abdaa9118ac2d51a0bd1b0bc56685d0ac6b867725e8475aadb901bdb0c8e1d13"
+}

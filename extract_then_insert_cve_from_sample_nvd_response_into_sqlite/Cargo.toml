@@ -1,0 +1,14 @@
+[package]
+name = "extract_then_insert_cve_from_sample_nvd_response_into_sqlite"
+version = "0.1.0"
+edition = "2024"
+authors = ["hungdv98 packetloss0709@gmail.com"]
+
+[dependencies]
+anyhow = "1.0.100"
+dotenvy = "0.15.7"
+rayon = "1.11.0"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.145"
+sqlx = { version = "0.8.6", features = ["runtime-tokio", "sqlite", "macros"] }
+tokio = { version = "1.47.1", features = ["full"] }
