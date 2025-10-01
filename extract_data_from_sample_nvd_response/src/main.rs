@@ -14,7 +14,7 @@ pub struct Cve {
     #[serde(rename = "vulnStatus")]
     pub vuln_status: Option<String>,
     #[serde(rename = "cveTags")]
-    pub cve_tags: Option<Vec<String>>,
+    pub cve_tags: Option<Vec<CveTag>>,
     pub descriptions: Option<Vec<LangString>>,
     pub metrics: Option<Metrics>,
     pub weaknesses: Option<Vec<Weakness>>,
@@ -187,6 +187,13 @@ pub struct Vulnerability {
     pub cve: Cve,
 }
 
+#[derive(Debug, Deserialize, Clone)]
+pub struct CveTag {
+    #[serde(rename = "sourceIdentifier")]
+    pub source_identifier: Option<String>,
+    pub tags: Option<Vec<String>>,
+}
+
 #[derive(Debug)]
 struct ExtractedCve {
     id: String,
@@ -321,7 +328,7 @@ async fn main() -> Result<()> {
 
     let start = std::time::Instant::now();
 
-    let data = fs::read_to_string("./sample_data/sample_response_from_nvd.json")?;
+    let data = fs::read_to_string("./sample_data/sample_response_from_nvd_case_1.json")?;
     let feed: Feed = serde_json::from_str(&data)?;
     let vulnerabilities = feed.vulnerabilities;
 
